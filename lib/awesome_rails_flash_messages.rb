@@ -1,0 +1,3 @@
+module AwesomeRailsFlashMessages
+  # Your code goes here...
+end
