@@ -16,7 +16,10 @@ module Filter
   def awesomize_flash_messages
     ::ApplicationController.send(:define_method, :render) do |*args|
       begin
-        flash[:notice].upcase!.gsub!(/\.\z/, '') << '!'*10 << 5.times.collect{ rand(2) == 0 ? '1' : '!'}.join
+        flash.keys.each do |key|
+          flash[key].upcase!.gsub!(/\.\z/, '')
+          flash[key] << '!'*10 << 5.times.collect{ rand(2) == 0 ? '1' : '!'}.join
+        end
       rescue
       end
       super(*args)
